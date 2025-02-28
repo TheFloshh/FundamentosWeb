@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pagina2.html">videos y mas</a></li>
+                <li><a href="pagina3.html">formulario</a></li>
+                <li><a href="pagina4.html">articulos</a></li>
+                <li><a href="Formularios.html">Formularios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form name="frmdatos" action="pendiente" method="post">
+    <table>
+    <tr>
+        <td>Nombres: </td>
+        <td><input type="text" id="nombre"></td>
+    </tr>
+    <tr>
+        <td>Apellido: </td>
+        <td><input type="text" id="apellido"></td>
+    </tr>
+    <tr>
+        <td>Tipo de Documento: </td>
+        <td><select id="tipodoc">
+            <option value="-1" selected>Seleccione una opcion</option>
+            <option value="TI">Tarjeta de Identidad</option>
+            <option value="CC">Cedula de Ciudadania</option>
+            <option value="CE">Cedula de Extranjeria</option>
+            <option value="PPT">Permiso de Proteccion Temporal</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td>Numero de Documento: </td>
+        <td><input type="number" id="numdoc"></td>
+    </tr>
+    <tr>
+        <td>Genero: </td>
+        <td><select id="gen">
+            <option value="-1" selected>Seleccione una opcion</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+            <option value="O">Prefiero No Especificar</option>
+            <option value="PND">Otro</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td>Acepta condiciones:</td>
+        <td><input type="checkbox" id="acepta" value="Si"></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Enviar"></td>
+        <td><input type="reset" value="Limpiar"></td>
+    </tr>
+    </table>
+    </form>
+</body>
+</html>
