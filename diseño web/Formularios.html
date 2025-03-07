@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formularios</title>
+    <script type="text/javascript">
+        function valida_formulario() {
+            var n=document.getElementById('nombre').value;
+            var password=document.getElementById('apellido').value;
+            if(n==''){
+            alert('Error, debe ingresar el nombre'); return false;
+        } else if (password==''){
+            alert('Error, debe ingresar el apellido'); return false;
+        } else    
+        alert('Bienvenido Cliente:\n'
+            +'Nombre:' + n + '\n'
+            +'Apellido:' + password);
+            return true;
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -14,23 +29,25 @@
                 <li><a href="pagina3.html">formulario</a></li>
                 <li><a href="pagina4.html">articulos</a></li>
                 <li><a href="Formularios.html">Formularios</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
 
-    <form name="frmdatos" action="pendiente" method="post">
+    <form name="frmdatos" action="pendiente" method="post" onsubmit="return valida_formulario()">
     <table>
     <tr>
-        <td>Nombres: </td>
-        <td><input type="text" id="nombre"></td>
+        <td><b>Nombre: </b></td>
+        
+        <td><label for="nombre"><span style="color: rgb(179, 21, 21);" title="Campo Obligatorio">*</span></label> <input type="text" id="nombre" required></td>
     </tr>
     <tr>
-        <td>Apellido: </td>
-        <td><input type="text" id="apellido"></td>
+        <td><b>Apellido:</b> </td>
+        <td><label for="apellido"><span style="color: rgb(179, 21, 21);">*</span></label> <input type="text" id="apellido" required></td>
     </tr>
     <tr>
-        <td>Tipo de Documento: </td>
-        <td><select id="tipodoc">
+        <td><b>Tipo de Documento:</b> </td>
+        <td><label for="tipodoc"><span style="color: rgb(179, 21, 21);">*</span></label> <select id="tipodoc">
             <option value="-1" selected>Seleccione una opcion</option>
             <option value="TI">Tarjeta de Identidad</option>
             <option value="CC">Cedula de Ciudadania</option>
@@ -39,12 +56,12 @@
         </select></td>
     </tr>
     <tr>
-        <td>Numero de Documento: </td>
-        <td><input type="number" id="numdoc"></td>
+        <td><b>Numero de Documento:</b> </td>
+        <td><label for="numdoc"><span style="color: rgb(179, 21, 21);">*</span></label> <input type="number" id="numdoc"></td>
     </tr>
     <tr>
-        <td>Genero: </td>
-        <td><select id="gen">
+        <td><b>Genero:</b> </td>
+        <td><label for="gen"><span style="color: rgb(179, 21, 21);">*</span></label> <select id="gen">
             <option value="-1" selected>Seleccione una opcion</option>
             <option value="M">Masculino</option>
             <option value="F">Femenino</option>
@@ -53,7 +70,7 @@
         </select></td>
     </tr>
     <tr>
-        <td>Acepta condiciones:</td>
+        <td><b>Acepta condiciones:</b></td>
         <td><input type="checkbox" id="acepta" value="Si"></td>
     </tr>
     <tr>

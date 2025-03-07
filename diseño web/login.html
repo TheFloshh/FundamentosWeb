@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function valida_formulario() {
+            var n=document.getElementById('nombre').value;
+            var a=document.getElementById('password').value;
+            if(n==''){
+            alert('Error, debe ingresar el nombre'); return false;
+        } else if (a==''){
+            alert('Error, debe ingresar la contraseña'); return false;
+        } else 
+        alert('Bienvenido Cliente:\n'
+            +'Nombre:' + n );
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pagina2.html">videos y mas</a></li>
+                <li><a href="pagina3.html">formulario</a></li>
+                <li><a href="pagina4.html">articulos</a></li>
+                <li><a href="Formularios.html">Formularios</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Ingreso a la Aplicacion</h1>
+    <form name="login" action="pendiente" method="post" onsubmit="return valida_formulario()">
+        <table>
+        <tr>
+            <td><b>Nombre: </b></td>
+            
+            <td><label for="nombre"><span style="color: rgb(179, 21, 21);" title="Campo Obligatorio">*</span></label> 
+                <input type="text" id="nombre" required></td>
+        </tr>
+        <tr>
+            <td><b>Contraseña: </b></td>
+
+            <td><label for="Contraseña"><span style="color: rgb(179, 21, 21);" title="Campo Obligatorio">*</span></label>  
+                <input type="password" id="password" required></td>
+        </tr>
+        <tr>
+            <td><table border="2px">
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>0</td>
+                    <td>R</td>
+                </tr>
+            </table></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Enviar"></td>
+            <td><input type="reset" value="Limpiar"></td>
+        </tr>
+</body>
+</html>
