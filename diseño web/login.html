@@ -14,9 +14,36 @@
             alert('Error, debe ingresar la contraseña'); return false;
         } else 
         alert('Bienvenido Cliente:\n'
-            +'Nombre:' + n );
+            + n );
             return true;
         }
+
+        function agregarNumero(numero){
+            var password=document.getElementById('password');
+            password.value=password.value+numero;
+        }
+        
+        function borrar(){
+            var password=document.getElementById('password');
+            password.value="";
+        }
+
+        function retroceso(){
+            var password=document.getElementById('password');
+            password.value=password.value.substring(0,password.value.length-1);
+        }
+
+        function ocultarNumero(){
+            var teclado=document.getElementById('teclado');
+            teclado.style.display='';
+        }
+        
+        function mostrarNumero(){
+            var teclado=document.getElementById('teclado');
+            teclado.style.display='';
+        }
+
+
     </script>
 </head>
 <body>
@@ -45,27 +72,27 @@
             <td><b>Contraseña: </b></td>
 
             <td><label for="Contraseña"><span style="color: rgb(179, 21, 21);" title="Campo Obligatorio">*</span></label>  
-                <input type="password" id="password" required></td>
+                <input type="password" id="password" required readonly></td>
         </tr>
         <tr>
-            <td><table border="2px">
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
+            <td><table border="2px"onmouseover="mostrarNumero()" onmouseout="ocultarNumero()" id="teclado">
+                <td><img src="images/7.JPG" onclick="agregarNumero(7)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/7.JPG';"></td>
+                <td><img src="images/8.JPG" onclick="agregarNumero(8)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/8.JPG';"></td>
+                <td><img src="images/9.JPG" onclick="agregarNumero(9)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/9.JPG';"></td>
                 <tr>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
+                    <td><img src="images/4.JPG" onclick="agregarNumero(4)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/4.JPG';"></td>
+                    <td><img src="images/5.JPG" onclick="agregarNumero(5)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/5.JPG';"></td>
+                    <td><img src="images/6.JPG" onclick="agregarNumero(6)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/6.JPG';"></td>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
+                    <td><img src="images/1.JPG" onclick="agregarNumero(1)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/1.JPG';"></td>
+                    <td><img src="images/2.JPG" onclick="agregarNumero(2)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/2.JPG';"></td>
+                    <td><img src="images/3.JPG" onclick="agregarNumero(3)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/3.JPG';"></td>
                 </tr>
                 <tr>
-                    <td>L</td>
-                    <td>0</td>
-                    <td>R</td>
+                    <td><button onclick="borrar()">L</button></td>
+                    <td><img src="images/0.JPG" onclick="agregarNumero(0)" onmouseover="this.src='images/asterisco.JPG';" onmouseout="this.src='images/0.JPG';"></td>
+                    <td><button onclick="retroceso()">R</button></td>
                 </tr>
             </table></td>
         </tr>
